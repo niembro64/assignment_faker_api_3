@@ -5,10 +5,15 @@ const port = 9000;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+app.get("/", (req,res)=>{
+    console.log("newer one");
+    res.json({"//message": "comment on message", "message":"here's some message"});
+})
 app.get("/api", (req,res)=>{
     console.log("trying to talk to database");
     res.json({message:"here is your response, sir"});
 })
+
 
 app.get("/api/other", (req,res)=>{
     console.log("getting other route");
